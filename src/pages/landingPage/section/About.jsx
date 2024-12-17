@@ -3,6 +3,8 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Icon } from "@iconify/react/dist/iconify.js";
 import { sosialMedia } from "../../../data/sosialMedia";
+import { Link } from "react-router-dom";
+import GitHubCalendar from "react-github-calendar";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -30,6 +32,21 @@ const About = () => {
         id: "transition2",
         start: "50% 90%",
         scrub: 2,
+        // markers: true,
+        pinSpacing: false,
+        // onUpdate: (self) => {
+        //   console.log(self.progress);
+        // },
+      },
+    });
+
+    const timeline3 = gsap.timeline({
+      scrollTrigger: {
+        trigger: "#about-transition",
+        end: "85% 80%",
+        id: "transition3",
+        start: "50% 90%",
+        scrub: 2,
         markers: true,
         pinSpacing: false,
         onUpdate: (self) => {
@@ -37,31 +54,38 @@ const About = () => {
         },
       },
     });
+    timeline3.fromTo("#github-calendar",{width: 0,opacity:0}, {
+      width: "100%",opacity:1,
+    });
 
     // Periksa apakah elemen boxItem ada
     if (boxItems.length > 0) {
-      timeline2.to("#box-wrapper",{
+      timeline2.fromTo("#box-wrapper",
+        {opacity:0}, {
+          opacity:1,
         width: "100%",
-      })
-      boxItems.forEach((item,index) => {
-        timeline2.fromTo(
-          item,
-          {
-            width: '15%',
-            opacity: 1,
-            height: 0,
-            fontSize:0,
-          },
-          {
-            duration: 1,
-            height: `${25*(index+1)}%`,
-            y: 0,
-       
-            ease: "power2.out",
-          }
-        ).to(item,{
-          fontSize:60,
-        });
+      });
+      boxItems.forEach((item, index) => {
+        timeline2
+          .fromTo(
+            item,
+            {
+              width: "15%",
+              opacity: 1,
+              height: 0,
+              fontSize: 0,
+            },
+            {
+              duration: 1,
+              height: `${25 * (index + 1)}%`,
+              y: 0,
+
+              ease: "power2.out",
+            }
+          )
+          .to(item, {
+            fontSize: 60,
+          });
       });
     }
 
@@ -92,7 +116,8 @@ const About = () => {
 
     return () => {
       timeline1.kill();
-      timeline2.kill(); 
+      timeline2.kill();
+      timeline3.kill();
     };
   }, []);
 
@@ -108,21 +133,40 @@ const About = () => {
       >
         <div
           id="about-wave"
-          className="bg-primary sticky top-0 h-full ov"
+          className="bg-primary sticky top-0 h-full "
           style={{ width: "100px", height: "100px" }}
         >
-          <div id="box-wrapper" className="absolute overflow-hidden flex justify-end size-fit w-full h-full   top-0 right-0">
-            {
-              sosialMedia.map((item, index) => (
-                <div
-                  key={index}
-                  id={`box${index + 1}`}
-                  className="bg-secondary h-32  w-32 flex justify-center items-center relative"
+             <div id="github-calendar" className="absolute bottom-4 overflow-hidden text-secondary   left-0 px-4">
+              <GitHubCalendar
+              
+                username="anantariskys"
+                blockSize={15} 
+                blockMargin={2} 
+                colorScheme="dark" 
+                fontSize={12} 
+              />
+            </div>
+          <div
+            id="box-wrapper"
+            className="absolute overflow-hidden flex justify-end size-fit w-full h-full   top-0 right-0"
+          >
+            {sosialMedia.map((item, index) => (
+              <div
+                id={`box${index + 1}`}
+                key={index}
+                className="bg-secondary h-32 w-32 group flex flex-col hover:bg-opacity-90 duration-300 cursor-pointer justify-center items-center relative"
+              >
+                <a
+                  href={item.link}
+                  className="flex justify-center items-center w-full h-full"
                 >
-                  <Icon icon={item.icon} />
-                </div>
-              ))
-            }
+                  <Icon
+                    className="group-hover:scale-105 transition-transform"
+                    icon={item.icon}
+                  />
+                </a>
+              </div>
+            ))}
            
           </div>
         </div>
