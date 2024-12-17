@@ -15,9 +15,9 @@ const Hero = () => {
       scrollTrigger: {
         trigger: "#hero-section",
         start: "top top",
-        end: "bottom 75%",
+        end: "80% 60%",
         scrub: 1,
-        markers: true,
+        // markers: true,
         pinSpacing: false,
         onUpdate: (self) => console.log(self.progress),
       },
