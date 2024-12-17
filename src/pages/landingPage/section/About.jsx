@@ -1,6 +1,8 @@
 import React, { useEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { Icon } from "@iconify/react/dist/iconify.js";
+import { sosialMedia } from "../../../data/sosialMedia";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -24,11 +26,11 @@ const About = () => {
     const timeline2 = gsap.timeline({
       scrollTrigger: {
         trigger: "#about-transition",
-        end: "bottom bottom",
+        end: "85% 80%",
         id: "transition2",
         start: "50% 90%",
         scrub: 2,
-        // markers: true,
+        markers: true,
         pinSpacing: false,
         onUpdate: (self) => {
           console.log(self.progress);
@@ -48,6 +50,7 @@ const About = () => {
             width: '15%',
             opacity: 1,
             height: 0,
+            fontSize:0,
           },
           {
             duration: 1,
@@ -56,7 +59,9 @@ const About = () => {
        
             ease: "power2.out",
           }
-        );
+        ).to(item,{
+          fontSize:60,
+        });
       });
     }
 
@@ -107,9 +112,18 @@ const About = () => {
           style={{ width: "100px", height: "100px" }}
         >
           <div id="box-wrapper" className="absolute overflow-hidden flex justify-end size-fit w-full h-full   top-0 right-0">
-            <div id="box1" className="bg-secondary h-32 w-32" />
-            <div id="box2" className="bg-secondary h-32 w-32 " />
-            <div id="box3" className="bg-secondary h-32 w-32 " />
+            {
+              sosialMedia.map((item, index) => (
+                <div
+                  key={index}
+                  id={`box${index + 1}`}
+                  className="bg-secondary h-32  w-32 flex justify-center items-center relative"
+                >
+                  <Icon icon={item.icon} />
+                </div>
+              ))
+            }
+           
           </div>
         </div>
       </div>
