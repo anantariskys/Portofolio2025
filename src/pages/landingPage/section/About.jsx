@@ -10,6 +10,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 const About = () => {
   useEffect(() => {
+   
     const aboutWave = document.querySelector("#about-wave");
     const boxItems = document.querySelectorAll("#box-wrapper > div");
 
@@ -57,6 +58,22 @@ const About = () => {
     timeline3.fromTo("#github-calendar",{width: 0,opacity:0}, {
       width: "100%",opacity:1,
     });
+    gsap.fromTo("#about-title", { opacity: 0, x:-window.innerWidth/4 }, 
+      { 
+        scrollTrigger: {
+          trigger: "#about-transition",
+          end: "85% 80%",
+          id: "transition3",
+          start: "50% 90%",
+          scrub: 1,
+          pinSpacing: false,
+          onUpdate: (self) => {
+            console.log(self.progress);
+          },
+        },
+        opacity: 1,
+        x:0
+      });
 
     // Periksa apakah elemen boxItem ada
     if (boxItems.length > 0) {
@@ -136,6 +153,11 @@ const About = () => {
           className="bg-primary sticky top-0 h-full "
           style={{ width: "100px", height: "100px" }}
         >
+          <div className=" text-secondary max-w-3xl space-y-4 p-4">
+            <h2 id="about-title" className="font-bold text-9xl">About Me.</h2>
+            <p id="about-description" className="text-lg text-justify">I am a student studying Information Technology Education at the Faculty of Computer Science, Brawijaya University. I have an interest in programming, web development and related fields. My academic endeavors have given me a deep understanding of education and computer science. I have translated theoretical knowledge into practical skills through my role as a practicum assistant. Additionally, my involvement in various campus organizations has enriched my skills and knowledge, strengthening my readiness to excel in a variety of IT-related roles.</p>
+
+          </div>
              <div id="github-calendar" className="absolute bottom-4 overflow-hidden text-secondary   left-0 px-4">
               <GitHubCalendar
               
