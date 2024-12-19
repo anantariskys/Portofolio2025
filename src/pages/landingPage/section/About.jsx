@@ -10,7 +10,6 @@ gsap.registerPlugin(ScrollTrigger);
 
 const About = () => {
   useEffect(() => {
-   
     const aboutWave = document.querySelector("#about-wave");
     const boxItems = document.querySelectorAll("#box-wrapper > div");
 
@@ -55,11 +54,18 @@ const About = () => {
         },
       },
     });
-    timeline3.fromTo("#github-calendar",{width: 0,opacity:0}, {
-      width: "100%",opacity:1,
-    });
-    gsap.fromTo("#about-title", { opacity: 0, x:-window.innerWidth/4 }, 
-      { 
+    timeline3.fromTo(
+      "#github-calendar",
+      { width: 0, opacity: 0 },
+      {
+        width: "100%",
+        opacity: 1,
+      }
+    );
+    gsap.fromTo(
+      "#about-title",
+      { opacity: 0, x: -window.innerWidth / 4 },
+      {
         scrollTrigger: {
           trigger: "#about-transition",
           end: "85% 80%",
@@ -72,16 +78,59 @@ const About = () => {
           },
         },
         opacity: 1,
-        x:0
-      });
+        x: 0,
+      }
+    );
+    gsap.fromTo(
+      "#about-line",
+      { opacity: 0, x: -window.innerWidth / 4 },
+      {
+        scrollTrigger: {
+          trigger: "#about-transition",
+          end: "85% 80%",
+          id: "transition3",
+          start: "50% 90%",
+          scrub: 3,
+          pinSpacing: false,
+          onUpdate: (self) => {
+            console.log(self.progress);
+          },
+        },
+        opacity: 1,
+        x: 0,
+      }
+    );
+    gsap.fromTo(
+      "#about-description",
+      { opacity: 0, x: -window.innerWidth / 2, fontSize: 16 },
+      {
+        scrollTrigger: {
+          trigger: "#about-transition",
+          end: "85% 80%",
+          id: "transition3",
+          start: "50% 90%",
+          scrub: 5,
+          pinSpacing: false,
+          onUpdate: (self) => {
+            console.log(self.progress);
+          },
+        },
+        opacity: 1,
+        x: 0,
+        fontSize: 16,
+      }
+    );
 
     // Periksa apakah elemen boxItem ada
     if (boxItems.length > 0) {
-      timeline2.fromTo("#box-wrapper",
-        {opacity:0}, {
-          opacity:1,
-        width: "100%",
-      });
+      timeline2.fromTo(
+        "#box-wrapper",
+        { opacity: 0 },
+        {
+          opacity: 1,
+          width: "100%",
+        }
+      );
       boxItems.forEach((item, index) => {
         timeline2
           .fromTo(
@@ -139,7 +188,7 @@ const About = () => {
   }, []);
 
   return (
-    <div id="about-section" className="relative">
+    <div id="about-section" className="relative" >
       <div
         id="about-transition"
         style={{
@@ -147,30 +196,47 @@ const About = () => {
           backgroundImage: `url("https://www.transparenttextures.com/patterns/stardust.png")`,
         }}
         className="h-[300vh] w-full relative"
+        
       >
         <div
           id="about-wave"
           className="bg-primary sticky top-0 h-full "
           style={{ width: "100px", height: "100px" }}
+         
         >
-          <div className=" text-secondary max-w-3xl space-y-4 p-4">
-            <h2 id="about-title" className="font-bold text-9xl">About Me.</h2>
-            <p id="about-description" className="text-lg text-justify">I am a student studying Information Technology Education at the Faculty of Computer Science, Brawijaya University. I have an interest in programming, web development and related fields. My academic endeavors have given me a deep understanding of education and computer science. I have translated theoretical knowledge into practical skills through my role as a practicum assistant. Additionally, my involvement in various campus organizations has enriched my skills and knowledge, strengthening my readiness to excel in a variety of IT-related roles.</p>
-
-          </div>
-             <div id="github-calendar" className="absolute bottom-4 overflow-hidden text-secondary   left-0 px-4">
+          <div className=" text-secondary  space-y-4 p-4 flex flex-col h-full justify-center">
+            <h2 id="about-title" className="font-bold text-9xl">
+              About Me.
+            </h2>
+            <div id="about-line" className="h-1 bg-secondary max-w-4xl"></div>
+            <p
+              id="about-description"
+              className="text-lg text-justify max-w-5xl"
+            >
+              I am a student studying Information Technology Education at the
+              Faculty of Computer Science, Brawijaya University. I have an
+              interest in programming, web development and related fields. My
+              academic endeavors have given me a deep understanding of education
+              and computer science. I have translated theoretical knowledge into
+              practical skills through my role as a practicum assistant.
+              Additionally, my involvement in various campus organizations has
+              enriched my skills and knowledge, strengthening my readiness to
+              excel in a variety of IT-related roles.
+            </p>
+            <div id="github-calendar" className="  text-secondary px-4">
               <GitHubCalendar
-              
                 username="anantariskys"
-                blockSize={15} 
-                blockMargin={2} 
-                colorScheme="dark" 
-                fontSize={12} 
+                blockSize={15}
+                blockMargin={2}
+                colorScheme="dark"
+                fontSize={12}
               />
             </div>
+          </div>
           <div
             id="box-wrapper"
-            className="absolute overflow-hidden flex justify-end size-fit w-full h-full   top-0 right-0"
+            className="absolute z-30 overflow-hidden flex justify-end size-fit w-full h-full top-0 right-0"
+            onClick={() => console.log("clicked")}
           >
             {sosialMedia.map((item, index) => (
               <div
@@ -178,10 +244,7 @@ const About = () => {
                 key={index}
                 className="bg-secondary h-32 w-32 group flex flex-col hover:bg-opacity-90 duration-300 cursor-pointer justify-center items-center relative"
               >
-                <a
-                  href={item.link}
-                  className="flex justify-center items-center w-full h-full"
-                >
+                <a href={item.url} target="_blank" rel="noopener noreferrer">
                   <Icon
                     className="group-hover:scale-105 transition-transform"
                     icon={item.icon}
@@ -189,7 +252,6 @@ const About = () => {
                 </a>
               </div>
             ))}
-           
           </div>
         </div>
       </div>
