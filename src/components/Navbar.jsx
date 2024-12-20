@@ -8,10 +8,8 @@ const Navbar = () => {
     const currentScrollY = window.scrollY;
 
     if (currentScrollY > lastScrollY) {
-      
       setShowNavbar(false);
     } else {
-    
       setShowNavbar(true);
     }
 
@@ -28,15 +26,18 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`absolute top-0 left-0 z-20 w-full transition-transform duration-300 ${
+      className={`fixed top-0 left-0 z-20 w-full bg-transparent mix-blend-difference  transition-transform duration-300 ${
         showNavbar ? "translate-y-0" : "-translate-y-full"
       }`}
     >
-      <main className="w-full container text-primary py-4 flex justify-center items-center">
-        <ul className="flex items-center mix-blend-multiply gap-10 font-semibold w-fit bg-secondary rounded-xl  py-4 px-8 bg-opacity-50 backdrop-blur-xl">
-          <li>About</li>
-          <li>Services</li>
-          <li>Contact</li>
+      <main className="w-full container  py-4 flex justify-center items-center">
+        <ul
+          className="flex items-center text-white bg-white bg-opacity-80 mix-blend-difference gap-10 font-semibold w-fit rounded-xl py-4 px-8"
+        
+        >
+          <li className="text-white mix-blend-difference">About</li>
+          <li className="text-white mix-blend-difference">Services</li>
+          <li className="text-white mix-blend-difference">Contact</li>
         </ul>
       </main>
     </nav>
