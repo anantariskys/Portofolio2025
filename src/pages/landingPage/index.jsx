@@ -15,6 +15,7 @@ const LandingPage = () => {
     >
       <Hero />
       <About />
+      <TechStack/>
     </div>
   );
 };
