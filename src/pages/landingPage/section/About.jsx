@@ -188,7 +188,7 @@ const About = () => {
   }, []);
 
   return (
-    <div id="about-section" className="relative" >
+    <div id="about-section" className="relative">
       <div
         id="about-transition"
         style={{
@@ -196,46 +196,52 @@ const About = () => {
           backgroundImage: `url("https://www.transparenttextures.com/patterns/stardust.png")`,
         }}
         className="h-[300vh] w-full relative"
-        
       >
         <div
           id="about-wave"
           className="bg-primary sticky top-0 h-full "
           style={{ width: "100px", height: "100px" }}
-         
         >
-          <div className=" text-secondary  space-y-4 p-4 flex flex-col h-full justify-center">
-            <h2 id="about-title" className="font-bold text-9xl">
-              About Me.
-            </h2>
-            <div id="about-line" className="h-1 bg-secondary max-w-4xl"></div>
-            <p
-              id="about-description"
-              className="text-lg text-justify max-w-5xl"
-            >
-              I am a student studying Information Technology Education at the
-              Faculty of Computer Science, Brawijaya University. I have an
-              interest in programming, web development and related fields. My
-              academic endeavors have given me a deep understanding of education
-              and computer science. I have translated theoretical knowledge into
-              practical skills through my role as a practicum assistant.
-              Additionally, my involvement in various campus organizations has
-              enriched my skills and knowledge, strengthening my readiness to
-              excel in a variety of IT-related roles.
-            </p>
-            <div id="github-calendar" className="  text-secondary px-4">
+          <main className="container  flex flex-col gap-4 justify-center h-full">
+            <div className=" text-secondary space-y-4 flex max-w-4xl flex-col justify-center">
+              <h2 id="about-title" className="font-bold text-9xl">
+                About Me.
+              </h2>
+              <div id="about-line" className="h-1 bg-secondary max-w-3xl"></div>
+              <p
+                id="about-description"
+                className="text-lg text-justify max-w-5xl relative z-30 mix-blend-difference"
+              >
+                I am a student studying Information Technology Education at the
+                Faculty of Computer Science, Brawijaya University. I have an
+                interest in programming, web development and related fields. My
+                academic endeavors have given me a deep understanding of
+                education and computer science. I have translated theoretical
+                knowledge into practical skills through my role as a practicum
+                assistant. Additionally, my involvement in various campus
+                organizations has enriched my skills and knowledge,
+                strengthening my readiness to excel in a variety of IT-related
+                roles.
+              </p>
+              <div id="about-description" className="space-y-2 relative rounded-md  max-w-20 text-center">
+                <h3 className="text-2xl font-bold">20 +</h3>
+                <small>Completed Project</small>
+              </div>
+            </div>
+            <div id="github-calendar" className="flex gap-4 relative z-10 text-secondary">
               <GitHubCalendar
                 username="anantariskys"
                 blockSize={15}
                 blockMargin={2}
                 colorScheme="dark"
                 fontSize={12}
+                
               />
             </div>
-          </div>
+          </main>
           <div
             id="box-wrapper"
-            className="absolute z-30 overflow-hidden flex justify-end size-fit w-full h-full top-0 right-0"
+            className="absolute z-0 overflow-hidden flex justify-end  size-fit w-full h-full top-0 right-0"
             onClick={() => console.log("clicked")}
           >
             {sosialMedia.map((item, index) => (
