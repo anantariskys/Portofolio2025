@@ -162,7 +162,7 @@ const About = () => {
       .fromTo(
         aboutWave,
         {
-          x: windowWidth - waveWidth - 16,
+          x: windowWidth - waveWidth - 64,
           scale: 0,
           top: 16,
           borderRadius: "50%",
@@ -188,19 +188,22 @@ const About = () => {
   }, []);
 
   return (
-    <div id="about-section" className="relative">
+    <div id="about-section" className="relative ">
       <div
         id="about-transition"
         style={{
           backgroundColor: "#f8f9fa",
           backgroundImage: `url("https://www.transparenttextures.com/patterns/stardust.png")`,
         }}
-        className="h-[300vh] w-full relative"
+        className="h-[300vh] w-full relative "
       >
         <div
           id="about-wave"
           className="bg-primary sticky top-0 h-full "
-          style={{ width: "100px", height: "100px" }}
+          style={{ width: "100px", height: "100px",
+            backgroundColor: "#212529",
+            backgroundImage: `url("https://www.transparenttextures.com/patterns/stardust.png")`,
+           }}
         >
           <main className="container  flex flex-col gap-4 justify-center h-full">
             <div className=" text-secondary space-y-4 flex max-w-4xl flex-col justify-center">
@@ -261,13 +264,7 @@ const About = () => {
           </div>
         </div>
       </div>
-      <div
-        id="about-wrapper"
-        className="space-y-4 relative h-[200vh] bg-primary text-secondary"
-      >
-        <h1>Ini about</h1>
-        <div className="top-0 sticky h-screen"></div>
-      </div>
+      
     </div>
   );
 };
