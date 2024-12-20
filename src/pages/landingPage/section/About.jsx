@@ -47,7 +47,7 @@ const About = () => {
         id: "transition3",
         start: "50% 90%",
         scrub: 2,
-        markers: true,
+        // markers: true,
         pinSpacing: false,
         onUpdate: (self) => {
           console.log(self.progress);
