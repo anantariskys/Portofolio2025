@@ -1,30 +1,30 @@
-import image1 from "../assets/skill/pngwing.com.png";
-import image2 from "../assets/skill/pngwing.com (1).png";
-import Javascript from "../assets/skill/Js.png";
-import image4 from "../assets/skill/pngwing.com (3).png";
-import image5 from "../assets/skill/pngwing.com (4).png";
-import image6 from "../assets/skill/pngwing.com (5).png";
-import image7 from "../assets/skill/pngwing.com (6).png";
-import image8 from "../assets/skill/pngwing.com (7).png";
-import image9 from "../assets/skill/pngwing.com (8).png";
-import image10 from "../assets/skill/pngwing.com (9).png";
-import image11 from "../assets/skill/pngwing.com (10).png";
-import image12 from "../assets/skill/pngwing.com (11).png";
-import image13 from "../assets/skill/pngwing.com (12).png";
-import image14 from "../assets/skill/pngwing.com (13).png";
-import image15 from "../assets/skill/pngwing.com (14).png";
-import image16 from "../assets/skill/pngwing.com (15).png";
-import image17 from "../assets/skill/pngwing.com (16).png";
-import image18 from "../assets/skill/pngwing.com (17).png";
+import image1 from "../assets/skill/pngwing.com.webp";
+import image2 from "../assets/skill/pngwing.com (1).webp";
+import Javascript from "../assets/skill/Js.webp";
+import image4 from "../assets/skill/pngwing.com (3).webp";
+import image5 from "../assets/skill/pngwing.com (4).webp";
+import image6 from "../assets/skill/pngwing.com (5).webp";
+import image7 from "../assets/skill/pngwing.com (6).webp";
+import image8 from "../assets/skill/pngwing.com (7).webp";
+import image9 from "../assets/skill/pngwing.com (8).webp";
+import image10 from "../assets/skill/pngwing.com (9).webp";
+import image11 from "../assets/skill/pngwing.com (10).webp";
+import image12 from "../assets/skill/pngwing.com (11).webp";
+import image13 from "../assets/skill/pngwing.com (12).webp";
+import image14 from "../assets/skill/pngwing.com (13).webp";
+import image15 from "../assets/skill/pngwing.com (14).webp";
+import image16 from "../assets/skill/pngwing.com (15).webp";
+import image17 from "../assets/skill/pngwing.com (16).webp";
+import image18 from "../assets/skill/pngwing.com (17).webp";
 
-import Laravel from "../assets/skill/Laravel.png";
-import Next from "../assets/skill/Next.js.png";
-import Remix from "../assets/skill/remix-letter-dark.png";
-import Express from "../assets/skill/Express.png";
-import GSAP from "../assets/skill/gsap.png";
-import Firebase from '../assets/skill/firebase.png';
-import Supabase from '../assets/skill/supabase.png';
-import TypeScript from '../assets/skill/Ts.png';
+import Laravel from "../assets/skill/Laravel.webp";
+import Next from "../assets/skill/Next.js.webp";
+import Remix from "../assets/skill/remix-letter-dark.webp";
+import Express from "../assets/skill/Express.webp";
+import GSAP from "../assets/skill/gsap.webp";
+import Firebase from '../assets/skill/firebase.webp';
+import Supabase from '../assets/skill/supabase.webp';
+import TypeScript from '../assets/skill/Ts.webp';
 
 
 export const categorizedTechStack = {
@@ -44,14 +44,14 @@ export const categorizedTechStack = {
     { id: 21, title: "Express.js", imageUrl: Express },
     { id: 9, title: "Laravel", imageUrl: Laravel },
     { id: 22, title: "GSAP", imageUrl: GSAP },
-    { id: 4, title: "SASS", imageUrl: image4 },
+    // { id: 4, title: "SASS", imageUrl: image4 },
     { id: 5, title: "Bootstrap", imageUrl: image5 },
     { id: 7, title: "DaisyUI", imageUrl: image7 },
-    { id: 8, title: "Vue", imageUrl: image8 },
+    // { id: 8, title: "Vue", imageUrl: image8 },
     { id: 12, title: "Vite", imageUrl: image12 },
+    { id: 16, title: "Node.js", imageUrl: image16 },
     { id: 6, title: "Tailwind CSS", imageUrl: image6 },
     { id: 15, title: "Framer Motion", imageUrl: image15 },
-    { id: 16, title: "Node.js", imageUrl: image16 },
   ],
   databases: [
     { id: 17, title: "MariaDB", imageUrl: image17 },
