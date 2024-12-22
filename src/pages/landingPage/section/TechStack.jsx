@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import { categorizedTechStack } from "../../../data/techStack";
+import RenderTechStack from "../../../components/RenderTechStack";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -65,24 +66,7 @@ const TechStack = () => {
     });
   }, []);
 
-  const renderTechStack = (title, data) => (
-    <section>
-      <h2 className="text-xl font-semibold mb-4">{title}</h2>
-      <div className="grid grid-cols-5 gap-2 w-full">
-        {data.map((item, index) => (
-          <div key={index} className="w-full bg-opacity-50 bg-tertiary p-2 rounded-md h-fit">
-            <img
-              src={item.imageUrl}
-              draggable="false"
-              alt={item.title}
-              className="w-full aspect-square object-contain"
-            />
-            <p className="text-xs text-center">{item.title}</p>
-          </div>
-        ))}
-      </div>
-    </section>
-  );
+
 
   return (
     <section
@@ -144,9 +128,9 @@ const TechStack = () => {
         <main className="container h-full flex items-end py-20 justify-start gap-4 flex-col">
           <div className="text-7xl font-bold">Tech Stack & Skills</div>
           <div className="grid grid-cols-3 gap-8">
-            {renderTechStack("Languages That I Speak", categorizedTechStack.languages)}
-            {renderTechStack("Frameworks and Libraries I Love", categorizedTechStack.frameworksLibraries)}
-            {renderTechStack("Where My Data Lives", categorizedTechStack.databases)}
+            <RenderTechStack title={'Languages That I Speak'} data={categorizedTechStack.languages}/>
+            <RenderTechStack title={'Frameworks and Libraries I Love'} data={categorizedTechStack.frameworksLibraries}/>
+            <RenderTechStack title={'Where My Data Lives'} data={categorizedTechStack.databases}/>
           </div>
         </main>
       </div>
