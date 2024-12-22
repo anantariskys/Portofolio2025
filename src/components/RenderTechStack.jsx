@@ -1,73 +1,68 @@
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
-import React, { useEffect, useRef } from "react";
+import React, { useEffect } from "react";
 
 const RenderTechStack = ({ title, data }) => {
-  const wrapperRef = useRef(null);
-  const titleRef = useRef(null);
-  const lineRef = useRef(null);
-
   gsap.registerPlugin(ScrollTrigger);
-
   useEffect(() => {
-    const techStackItems = wrapperRef.current.querySelectorAll("div");
+    const techStackItems = document.querySelectorAll(
+      "#tech-stack-wrapper > div"
+    );
 
-    // Timeline untuk judul dan garis
-    gsap.timeline({
+    const techStacktimeline = gsap.timeline({
       scrollTrigger: {
         trigger: "#techstack-section",
-        start: "top top",
         end: "85% bottom",
+        id: "render-tech-stack",
+        start: "top top",
         scrub: 1,
+        markers: false,
         pinSpacing: false,
-        markers: false, // Disable markers in production
+        // onUpdate: (self) => {
+        //   console.log(self.progress);
+        // },
       },
-    })
-      .fromTo(
-        titleRef.current,
-        { opacity: 0, y: 20 },
-        { opacity: 1, duration: 1, y: 0 }
-      )
-      .fromTo(
-        lineRef.current,
-        { width: 0 },
-        { duration: 1, width: "80%" }
-      );
-
-    // Animasi untuk item tech stack dengan stagger
-    gsap.fromTo(
-      techStackItems,
-      { opacity: 0, y: 50 },
-      {
-        opacity: 1,
-        y: 0,
-        duration: 1,
-        stagger: 0.2, // Adds delay between animations
-        scrollTrigger: {
-          trigger: "#techstack-section",
-          start: "top top",
-          end: "85% bottom",
-          scrub: 1,
-          pinSpacing: false,
-          markers: false, // Disable markers in production
-        },
-      }
+    });
+    const techStacktimeline2 = gsap.timeline({
+      scrollTrigger: {
+        trigger: "#techstack-section",
+        end: "85% bottom",
+        id: "render-tech-stack",
+        start: "top top",
+        scrub: 1,
+        markers: false,
+        pinSpacing: false,
+        // onUpdate: (self) => {
+        //   console.log(self.progress);
+        // },
+      },
+    });
+    techStacktimeline2.fromTo(
+      "#tech-stack-title",
+      { opacity: 0, y: 20 },
+      { opacity: 1, duration: 2, y: 0 }
+    ).fromTo(
+      "#tech-stack-line",
+      {  width: 0 },
+      {  duration: 2, width: '80%' }
     );
-  }, []);
 
+
+    techStackItems.forEach((item, index) => {
+      techStacktimeline.fromTo(
+        item,
+        { opacity: 0, y: item.clientHeight / 4 },
+        { opacity: 1, duration: 2, y: 0 }
+      );
+    });
+  }, []);
   return (
-    <section id="techstack-section" className="py-4 space-y-4">
-      <div className="space-y-2">
-        <h2 id="tech-stack-title" ref={titleRef} className="text-xl font-semibold">
-          {title}
-        </h2>
-        <div id="tech-stack-line" ref={lineRef} className="h-0.5 w-3/5 bg-secondary"></div>
+    <section className="py-4 space-y-4">
+      <div  className="space-y-2">
+        <h2 id="tech-stack-title" className="text-xl font-semibold ">{title}</h2>
+        <div id="tech-stack-line" className="h-0.5 w-3/5 bg-secondary"></div>
       </div>
-      <div
-        id="tech-stack-wrapper"
-        ref={wrapperRef}
-        className="grid grid-cols-5 gap-2 w-full"
-      >
+      <div id="tech-stack-wrapper" className="grid grid-cols-5 gap-2 w-full">
         {data.map((item, index) => (
           <div
             key={index}
