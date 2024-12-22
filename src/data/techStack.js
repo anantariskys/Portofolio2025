@@ -1,6 +1,6 @@
 import image1 from "../assets/skill/pngwing.com.png";
 import image2 from "../assets/skill/pngwing.com (1).png";
-import image3 from "../assets/skill/pngwing.com (2).png";
+import Javascript from "../assets/skill/Js.png";
 import image4 from "../assets/skill/pngwing.com (3).png";
 import image5 from "../assets/skill/pngwing.com (4).png";
 import image6 from "../assets/skill/pngwing.com (5).png";
@@ -31,7 +31,7 @@ export const categorizedTechStack = {
   languages: [
     { id: 1, title: "HTML", imageUrl: image1 },
     { id: 2, title: "CSS", imageUrl: image2 },
-    { id: 3, title: "JavaScript", imageUrl: image3 },
+    { id: 3, title: "JavaScript", imageUrl: Javascript },
     { id: 6, title: "TypeScript", imageUrl: TypeScript },
     { id: 10, title: "PHP", imageUrl: image10 },
     { id: 13, title: "Java", imageUrl: image13 },
