@@ -3,6 +3,7 @@ import { useEffect, useRef } from "react";
 import Hero from "./section/Hero";
 import About from "./section/About";
 import TechStack from "./section/TechStack";
+import Experience from "./section/Experience";
 
 
 
@@ -16,6 +17,7 @@ const LandingPage = () => {
       <Hero />
       <About />
       <TechStack/>
+      <Experience/>
     </div>
   );
 };
