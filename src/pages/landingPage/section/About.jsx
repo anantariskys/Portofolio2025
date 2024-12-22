@@ -213,7 +213,7 @@ const About = () => {
               <div id="about-line" className="h-1 bg-secondary max-w-3xl"></div>
               <p
                 id="about-description"
-                className="text-lg text-justify max-w-5xl relative z-30 mix-blend-difference"
+                className="text-lg text-justify max-w-4xl relative z-30 mix-blend-difference"
               >
                 I am a student studying Information Technology Education at the
                 Faculty of Computer Science, Brawijaya University. I have an
