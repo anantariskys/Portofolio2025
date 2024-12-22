@@ -34,9 +34,7 @@ const About = () => {
         scrub: 2,
         // markers: true,
         pinSpacing: false,
-        // onUpdate: (self) => {
-        //   console.log(self.progress);
-        // },
+    
       },
     });
 
@@ -49,9 +47,7 @@ const About = () => {
         scrub: 2,
         // markers: true,
         pinSpacing: false,
-        onUpdate: (self) => {
-          console.log(self.progress);
-        },
+      
       },
     });
     timeline3.fromTo(
@@ -73,9 +69,7 @@ const About = () => {
           start: "50% 90%",
           scrub: 1,
           pinSpacing: false,
-          onUpdate: (self) => {
-            console.log(self.progress);
-          },
+   
         },
         opacity: 1,
         x: 0,
@@ -92,9 +86,7 @@ const About = () => {
           start: "50% 90%",
           scrub: 3,
           pinSpacing: false,
-          onUpdate: (self) => {
-            console.log(self.progress);
-          },
+   
         },
         opacity: 1,
         x: 0,
@@ -111,9 +103,7 @@ const About = () => {
           start: "50% 90%",
           scrub: 5,
           pinSpacing: false,
-          onUpdate: (self) => {
-            console.log(self.progress);
-          },
+       
         },
         opacity: 1,
         x: 0,
@@ -213,7 +203,7 @@ const About = () => {
               <div id="about-line" className="h-1 bg-secondary max-w-3xl"></div>
               <p
                 id="about-description"
-                className="text-base text-justify max-w-4xl relative z-30 mix-blend-difference"
+                className="text-base text-justify max-w-4xl relative overflow-hidden z-30 mix-blend-difference"
               >
                 I am a student studying Information Technology Education at the
                 Faculty of Computer Science, Brawijaya University. I have an
@@ -270,3 +260,5 @@ const About = () => {
 };
 
 export default About;
+
+
