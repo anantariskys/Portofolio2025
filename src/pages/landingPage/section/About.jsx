@@ -136,14 +136,14 @@ const About = () => {
           .fromTo(
             item,
             {
-              width: "15%",
+              width: "10%",
               opacity: 1,
               height: 0,
               fontSize: 0,
             },
             {
               duration: 1,
-              height: `${25 * (index + 1)}%`,
+              height: `${ (100/3) * (index + 1)}%`,
               y: 0,
 
               ease: "power2.out",
@@ -207,13 +207,13 @@ const About = () => {
         >
           <main className="container  flex flex-col gap-4 justify-center h-full">
             <div className=" text-secondary space-y-4 flex max-w-4xl flex-col justify-center">
-              <h2 id="about-title" className="font-bold text-9xl">
+              <h2 id="about-title" className="font-bold text-8xl">
                 About Me.
               </h2>
               <div id="about-line" className="h-1 bg-secondary max-w-3xl"></div>
               <p
                 id="about-description"
-                className="text-lg text-justify max-w-4xl relative z-30 mix-blend-difference"
+                className="text-base text-justify max-w-4xl relative z-30 mix-blend-difference"
               >
                 I am a student studying Information Technology Education at the
                 Faculty of Computer Science, Brawijaya University. I have an
