@@ -234,7 +234,7 @@ const About = () => {
             <div id="github-calendar" className="flex gap-4 relative z-10 text-secondary">
               <GitHubCalendar
                 username="anantariskys"
-                blockSize={15}
+                blockSize={12}
                 blockMargin={2}
                 colorScheme="dark"
                 fontSize={12}
