@@ -2,10 +2,13 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import React, { useEffect } from "react";
 import OpeningExperience from "../../../components/OpeningExperience";
+import ExperienceCard from "../../../components/ExperienceCard";
+import { section } from "framer-motion/client";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const Experience = () => {
+  const wrapperRef= React.useRef(null);
   useEffect(() => {
     const sections = gsap.utils.toArray("#experience-wrapper > div");
 
@@ -22,6 +25,10 @@ const Experience = () => {
         },
       }
     );
+ 
+  
+
+    
   }, []);
 
   const experiences = [
@@ -29,35 +36,40 @@ const Experience = () => {
       title: "Software Engineer",
       company: "KBMDSI",
       date: "17 Sep 2022 - 18 Sep 2023",
-      description: "Developed and maintained various enterprise-level software solutions.",
+      description:
+        "Developed and maintained various enterprise-level software solutions.",
       location: "Jakarta, Indonesia",
     },
     {
       title: "Frontend Developer",
       company: "Tech Corp",
       date: "01 Oct 2021 - 02 Oct 2022",
-      description: "Worked on building and optimizing user interfaces for web applications.",
+      description:
+        "Worked on building and optimizing user interfaces for web applications.",
       location: "Bandung, Indonesia",
     },
     {
       title: "Full Stack Developer",
       company: "DevWorks",
       date: "10 Oct 2020 - 12 Oct 2021",
-      description: "Developed both frontend and backend services for client projects.",
+      description:
+        "Developed both frontend and backend services for client projects.",
       location: "Yogyakarta, Indonesia",
     },
     {
       title: "UI/UX Designer",
       company: "InnoTech",
       date: "15 Oct 2019 - 17 Oct 2020",
-      description: "Designed user interfaces and improved user experience for mobile apps.",
+      description:
+        "Designed user interfaces and improved user experience for mobile apps.",
       location: "Surabaya, Indonesia",
     },
     {
       title: "Junior Developer",
       company: "CodeX",
       date: "20 Oct 2018 - 22 Oct 2019",
-      description: "Assisted in developing small web applications and bug fixes.",
+      description:
+        "Assisted in developing small web applications and bug fixes.",
       location: "Malang, Indonesia",
     },
   ];
@@ -81,47 +93,21 @@ const Experience = () => {
       >
         <div
           id="experience-wrapper"
-          className="w-fit h-screen sticky top-0 flex"
+          className="w-fit h-screen sticky overflow-x-hidden top-0 flex"
+         
         >
           <OpeningExperience />
           {experiences.map((experience, index) => (
             <div
+            
               key={index}
-              className="w-screen h-screen relative flex items-center justify-around text-secondary"
+              className="w-screen h-screen relative flex overflow-x-hidden items-center justify-around text-secondary"
             >
               <div className="h-4 absolute w-full bg-secondary" />
-              
-              {/* Experience Top (Left) */}
-              <div
-                className={`top-1/2 flex flex-col items-center transform -translate-y-1/2`}
-              >
-                <div className="p-2">
-                  <h3 className="text-4xl font-bold">{experience.title}</h3>
-                  <div className="flex items-center justify-between">
-                    <small>{experience.company}</small>
-                    <small>{experience.date}</small>
-                  </div>
-                  <p>{experience.description}</p>
-                  <small>{experience.location}</small>
-                </div>
-                <div className="w-2 h-8 bg-secondary" />
-              </div>
+              <ExperienceCard experience={experience} top={true}/>
+              <ExperienceCard experience={experience} top={false} />
 
-              {/* Experience Bottom (Right) */}
-              <div
-                className={`top-1/2 flex flex-col items-center transform translate-y-1/2`}
-              >
-                <div className="w-2 h-8 bg-secondary" />
-                <div className="p-2">
-                  <h3 className="text-4xl font-bold">{experience.title}</h3>
-                  <div className="flex items-center justify-between">
-                    <small>{experience.company}</small>
-                    <small>{experience.date}</small>
-                  </div>
-                  <p>{experience.description}</p>
-                  <small>{experience.location}</small>
-                </div>
-              </div>
+           
             </div>
           ))}
         </div>
