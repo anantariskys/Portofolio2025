@@ -10,17 +10,17 @@ const ExperienceCard = ({ experience, top  }) => {
 
     }, []);
   return (
-    <div  id='experience-card' className={` ${top ? '-translate-y-1/2' : 'translate-y-1/2'}  flex flex-col items-center`}>
+    <div  id='experience-card' className={` ${top ? '-translate-y-1/2' : 'translate-y-1/2'} max-w-lg  flex flex-col items-center`}>
       {top ? (
         <>
           <div className="p-2">
-            <h3 className="text-4xl font-bold">{experience.title}</h3>
+            <h3 className="text-2xl font-bold">{experience.title}</h3>
             <div className="flex items-center justify-between">
-              <small>{experience.company}</small>
-              <small>{experience.date}</small>
+              <p className='text-sm'>{experience.company}</p>
+              <p className='text-sm'>{experience.date}</p>
             </div>
-            <p>{experience.description}</p>
-            <small>{experience.location}</small>
+            <p className='text-base'>{experience.description}</p>
+            <p className='text-sm'>{experience.location}</p>
           </div>
           <div className="w-2 h-8 bg-secondary" />
         </>
@@ -28,13 +28,13 @@ const ExperienceCard = ({ experience, top  }) => {
         <>
           <div className="w-2 h-8 bg-secondary" />
           <div className="p-2">
-            <h3 className="text-4xl font-bold">{experience.title}</h3>
+            <h3 className="text-2xl font-bold">{experience.title}</h3>
             <div className="flex items-center justify-between">
-              <small>{experience.company}</small>
-              <small>{experience.date}</small>
+              <p className='text-sm'>{experience.company}</p>
+              <p className='text-sm'>{experience.date}</p>
             </div>
-            <p>{experience.description}</p>
-            <small>{experience.location}</small>
+            <p className='text-base'>{experience.description}</p>
+            <p className='text-sm'>{experience.location}</p>
           </div>
         </>
       )}
