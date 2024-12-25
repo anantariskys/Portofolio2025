@@ -4,6 +4,7 @@ import React, { useEffect } from "react";
 import OpeningExperience from "../../../components/OpeningExperience";
 import ExperienceCard from "../../../components/ExperienceCard";
 import { section } from "framer-motion/client";
+import { experiences } from "../../../data/experience";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -31,48 +32,8 @@ const Experience = () => {
     
   }, []);
 
-  const experiences = [
-    {
-      title: "Software Engineer",
-      company: "KBMDSI",
-      date: "17 Sep 2022 - 18 Sep 2023",
-      description:
-        "Developed and maintained various enterprise-level software solutions.",
-      location: "Jakarta, Indonesia",
-    },
-    {
-      title: "Frontend Developer",
-      company: "Tech Corp",
-      date: "01 Oct 2021 - 02 Oct 2022",
-      description:
-        "Worked on building and optimizing user interfaces for web applications.",
-      location: "Bandung, Indonesia",
-    },
-    {
-      title: "Full Stack Developer",
-      company: "DevWorks",
-      date: "10 Oct 2020 - 12 Oct 2021",
-      description:
-        "Developed both frontend and backend services for client projects.",
-      location: "Yogyakarta, Indonesia",
-    },
-    {
-      title: "UI/UX Designer",
-      company: "InnoTech",
-      date: "15 Oct 2019 - 17 Oct 2020",
-      description:
-        "Designed user interfaces and improved user experience for mobile apps.",
-      location: "Surabaya, Indonesia",
-    },
-    {
-      title: "Junior Developer",
-      company: "CodeX",
-      date: "20 Oct 2018 - 22 Oct 2019",
-      description:
-        "Assisted in developing small web applications and bug fixes.",
-      location: "Malang, Indonesia",
-    },
-  ];
+
+  
 
   return (
     <div
@@ -104,8 +65,18 @@ const Experience = () => {
               className="w-screen h-screen relative flex overflow-x-hidden items-center justify-around text-secondary"
             >
               <div className="h-4 absolute w-full bg-secondary" />
-              <ExperienceCard experience={experience} top={true}/>
-              <ExperienceCard experience={experience} top={false} />
+              <ExperienceCard experience={experience[0]} top={true}/>
+              {
+                experience[1] ? (
+                  <ExperienceCard experience={experience[1]} top={false} />
+                  
+                ):(
+                  <div className="opacity-0">
+
+                    <ExperienceCard experience={experience[0]} top={false} />
+                  </div>
+                )
+              }
 
            
             </div>
