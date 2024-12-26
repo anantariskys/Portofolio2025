@@ -22,9 +22,8 @@ const Project = () => {
                 trigger: sectionRef.current,
                 start: "top top",
                 end: "bottom bottom",
-            
+                scrub:1,
             //    pin: true,
-                
                 pinSpacing: false,
               },
             }
@@ -39,7 +38,7 @@ const Project = () => {
       backgroundColor: "#212529",
     }}>
         <main ref={transitionRef}  className='sticky top-1/2  bg-white h4 w-4 -translate-y-1/2'>
-cok
+halo
         </main>
       
     </section>
