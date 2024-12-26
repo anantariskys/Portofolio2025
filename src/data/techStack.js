@@ -1,62 +1,32 @@
-import image1 from "../assets/skill/pngwing.com.webp";
-import image2 from "../assets/skill/pngwing.com (1).webp";
-import Javascript from "../assets/skill/Js.webp";
-import image4 from "../assets/skill/pngwing.com (3).webp";
-import image5 from "../assets/skill/pngwing.com (4).webp";
-import image6 from "../assets/skill/pngwing.com (5).webp";
-import image7 from "../assets/skill/pngwing.com (6).webp";
-import image8 from "../assets/skill/pngwing.com (7).webp";
-import image9 from "../assets/skill/pngwing.com (8).webp";
-import image10 from "../assets/skill/pngwing.com (9).webp";
-import image11 from "../assets/skill/pngwing.com (10).webp";
-import image12 from "../assets/skill/pngwing.com (11).webp";
-import image13 from "../assets/skill/pngwing.com (12).webp";
-import image14 from "../assets/skill/pngwing.com (13).webp";
-import image15 from "../assets/skill/pngwing.com (14).webp";
-import image16 from "../assets/skill/pngwing.com (15).webp";
-import image17 from "../assets/skill/pngwing.com (16).webp";
-import image18 from "../assets/skill/pngwing.com (17).webp";
-
-import Laravel from "../assets/skill/Laravel.webp";
-import Next from "../assets/skill/Next.js.webp";
-import Remix from "../assets/skill/remix-letter-dark.webp";
-import Express from "../assets/skill/Express.webp";
-import GSAP from "../assets/skill/gsap.webp";
-import Firebase from '../assets/skill/firebase.webp';
-import Supabase from '../assets/skill/supabase.webp';
-import TypeScript from '../assets/skill/Ts.webp';
-
-
 export const categorizedTechStack = {
   languages: [
-    { id: 1, title: "HTML", imageUrl: image1 },
-    { id: 2, title: "CSS", imageUrl: image2 },
-    { id: 3, title: "JavaScript", imageUrl: Javascript },
-    { id: 6, title: "TypeScript", imageUrl: TypeScript },
-    { id: 10, title: "PHP", imageUrl: image10 },
-    { id: 13, title: "Java", imageUrl: image13 },
-    { id: 14, title: "Python", imageUrl: image14 },
+    { id: 1, title: "HTML", imageUrl: "https://i.ibb.co.com/KrRSy67/pngwing-com.webp"},
+    { id: 2, title: "CSS", imageUrl: "https://i.ibb.co.com/kqgNFxQ/pngwing-com-1.webp" },
+    { id: 3, title: "JavaScript", imageUrl: "https://i.ibb.co.com/FVR0ZrV/pngwing-com.png" },
+    { id: 6, title: "TypeScript", imageUrl: "https://i.ibb.co.com/8Xmpdv7/Ts.webp" },
+    { id: 10, title: "PHP", imageUrl: "https://i.ibb.co.com/w7K5CW7/pngwing-com-9.webp" },
+    { id: 13, title: "Java", imageUrl: "https://i.ibb.co.com/hMG60nz/pngwing-com-12.webp"},
+    { id: 14, title: "Python", imageUrl: "https://i.ibb.co.com/9YMggS7/pngwing-com-13.webp" },
   ],
   frameworksLibraries: [
-    { id: 11, title: "React", imageUrl: image11 },
-    { id: 19, title: "Next.js", imageUrl: Next },
-    { id: 20, title: "Remix", imageUrl: Remix },
-    { id: 21, title: "Express.js", imageUrl: Express },
-    { id: 9, title: "Laravel", imageUrl: Laravel },
-    { id: 22, title: "GSAP", imageUrl: GSAP },
-    // { id: 4, title: "SASS", imageUrl: image4 },
-    { id: 5, title: "Bootstrap", imageUrl: image5 },
-    { id: 7, title: "DaisyUI", imageUrl: image7 },
-    // { id: 8, title: "Vue", imageUrl: image8 },
-    { id: 12, title: "Vite", imageUrl: image12 },
-    { id: 16, title: "Node.js", imageUrl: image16 },
-    { id: 6, title: "Tailwind CSS", imageUrl: image6 },
-    { id: 15, title: "Framer Motion", imageUrl: image15 },
+    { id: 11, title: "React", imageUrl: "https://i.ibb.co.com/1KP5r0S/pngwing-com-10.webp"},
+    { id: 19, title: "Next.js", imageUrl:"https://i.ibb.co.com/7tZ9Ysq/Next-js.webp" },
+    { id: 20, title: "Remix", imageUrl: "https://i.ibb.co.com/ZKTw4jY/remix-letter-dark.webp" },
+    { id: 21, title: "Express.js", imageUrl: "https://i.ibb.co.com/NW92ZjL/Express.webp" },
+    { id: 9, title: "Laravel", imageUrl: "https://i.ibb.co.com/qnL6mNh/Laravel.webp" },
+    { id: 22, title: "GSAP", imageUrl: "https://i.ibb.co.com/VwW7Z1F/gsap.webp" },
+    { id: 5, title: "Bootstrap", imageUrl: "https://i.ibb.co.com/wYyDjYm/pngwing-com-4.webp"},
+    { id: 7, title: "DaisyUI", imageUrl: "https://i.ibb.co.com/3dkvhYR/pngwing-com-6.webp"},
+    { id: 12, title: "Vite", imageUrl: "https://i.ibb.co.com/XZBFsGY/pngwing-com-11.webp"},
+    { id: 16, title: "Node.js", imageUrl: "https://i.ibb.co.com/MCQMh5f/pngwing-com-15.webp"},
+    { id: 16, title: "Axios", imageUrl: "https://i.ibb.co.com/d2SrPBy/Axios-Purple.png"},
+    { id: 6, title: "Tailwind CSS", imageUrl: "https://i.ibb.co.com/VHW2Gdn/pngwing-com-5.webp" },
+    { id: 15, title: "Framer Motion", imageUrl: "https://i.ibb.co.com/5jGjT0m/pngwing-com-14.webp" },
   ],
   databases: [
-    { id: 17, title: "MariaDB", imageUrl: image17 },
-    { id: 18, title: "MySQL", imageUrl: image18 },
-    { id: 23, title: "Firebase", imageUrl: Firebase },
-    { id: 24, title: "Supabase", imageUrl: Supabase },
+    { id: 17, title: "MariaDB", imageUrl:"https://i.ibb.co.com/JkskKgc/pngwing-com-16.webp" },
+    { id: 18, title: "MySQL", imageUrl: "https://i.ibb.co.com/1f08BWy/pngwing-com-17.webp"},
+    { id: 23, title: "Firebase", imageUrl:"https://i.ibb.co.com/pJDLrLF/firebase.webp" },
+    { id: 24, title: "Supabase", imageUrl:"https://i.ibb.co.com/cw1N2TT/supabase.webp" },
   ],
 };
