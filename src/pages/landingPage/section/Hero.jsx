@@ -90,7 +90,7 @@ const Hero = () => {
       {/* Box Wrapper Animasi */}
       <div
         id="box-wrapper2"
-        className=" h-1/4 w-full flex flex-col absolute bottom-0 left-0"
+        className=" h-1/4 w-full hidden lg:flex flex-col absolute bottom-0 left-0"
       >
         <div className="bg-primary" />
         <div className="bg-primary" />
