@@ -76,29 +76,29 @@ const TechStack = () => {
       className="bg-primary h-[300vh] text-secondary relative"
     >
       <div
-        className="sticky top-0 h-screen w-full"
+        className="sticky top-0 h-fit md:h-screen w-full"
         style={{
           backgroundColor: "#212529",
           backgroundImage: `url("https://www.transparenttextures.com/patterns/stardust.png")`,
         }}
       >
         {/* Box Wrappers */}
-        <div id="box-wrapper3" className="w-full flex h-1/4 flex-col absolute top-0 left-0">
+        <div id="box-wrapper3" className="w-full hidden md:flex h-1/4 flex-col absolute top-0 left-0">
           {[...Array(3)].map((_, i) => (
             <div key={i} className="bg-secondary" />
           ))}
         </div>
 
-        <div id="box-wrapper4" className="w-full flex h-1/4 items-end flex-col absolute bottom-0 right-0">
+        <div id="box-wrapper4" className="w-full hidden md:flex h-1/4 items-end flex-col absolute bottom-0 right-0">
           {[...Array(3)].map((_, i) => (
             <div key={i} className="bg-secondary" />
           ))}
         </div>
 
         {/* Main Content */}
-        <main className="container h-full flex items-end py-20 justify-start gap-4 flex-col">
-          <div className="text-7xl font-bold">Tech Stack & Skills</div>
-          <div className="grid grid-cols-3 gap-8">
+        <main className="container h-full flex items-start md:items-end py-4 md:py-20 justify-start md:gap-4 flex-col">
+          <div className="md:text-5xl text-4xl lg:text-7xl font-bold">Tech Stack & Skills</div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8">
             <RenderTechStack title="Languages That I Speak" data={categorizedTechStack.languages} />
             <RenderTechStack title="Frameworks and Libraries I Love" data={categorizedTechStack.frameworksLibraries} />
             <RenderTechStack title="Where My Data Lives" data={categorizedTechStack.databases} />
