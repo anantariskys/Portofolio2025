@@ -62,9 +62,9 @@ const Experience = () => {
             <div
             
               key={index}
-              className="w-screen h-screen relative flex overflow-x-hidden items-center justify-around text-secondary"
+              className="w-screen h-screen relative flex overflow-x-hidden items-center justify-center md:justify-around text-secondary"
             >
-              <div className="h-4 absolute w-full bg-secondary" />
+              <div className="h-1 md:h-4 absolute w-full bg-secondary" />
               <ExperienceCard experience={experience[0]} top={true}/>
               {
                 experience[1] ? (
