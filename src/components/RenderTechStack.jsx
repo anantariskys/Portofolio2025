@@ -2,12 +2,12 @@ import React from "react";
 
 const RenderTechStack = ({ title, data }) => {
   return (
- <section className="py-4 space-y-4">
+ <section className="md:py-4 space-y-4">
       <div className="space-y-2">
         <h2 className="text-lg font-semibold">{title}</h2>
         <div className="h-0.5 w-3/5 bg-secondary"></div>
       </div>
-      <div id="tech-stack-wrapper" className="grid grid-cols-5 gap-2 w-full">
+      <div id="tech-stack-wrapper" className="grid grid-cols-3 md:grid-cols-5 gap-2 w-full">
         {data.map((item, index) => (
           <div
             key={index}
