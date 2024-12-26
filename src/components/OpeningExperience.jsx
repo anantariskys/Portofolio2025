@@ -37,10 +37,10 @@ const OpeningExperience = () => {
     <div ref={sectionRef} className="w-screen h-screen overflow-hidden   flex items-center text-secondary">
       <main className="container ">
         <div className="flex  justify-start">
-          <h1 ref={titleRef} className="text-7xl font-bold">My Experience</h1>
+          <h1 ref={titleRef} className=" md:text-5xl text-2xl lg:text-7xl font-bold">My Experience</h1>
         </div>
       </main>
-      <div ref={lineRef} className="h-4 w-full bg-secondary" />
+      <div ref={lineRef} className="h-1 md:h-4 w-full bg-secondary" />
     </div>
   );
 };
