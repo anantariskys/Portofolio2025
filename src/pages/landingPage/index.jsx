@@ -4,6 +4,7 @@ import Hero from "./section/Hero";
 import About from "./section/About";
 import TechStack from "./section/TechStack";
 import Experience from "./section/Experience";
+import Project from "./section/Project";
 
 
 
@@ -18,6 +19,7 @@ const LandingPage = () => {
       <About />
       <TechStack/>
       <Experience/>
+      <Project/>
     </div>
   );
 };
