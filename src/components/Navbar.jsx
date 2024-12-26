@@ -30,9 +30,9 @@ const Navbar = () => {
         showNavbar ? "translate-y-0" : "-translate-y-full"
       }`}
     >
-      <main className="w-full container  py-4 flex justify-center items-center">
+      <main className="w-full container py-4 flex justify-center items-center">
         <ul
-          className="flex items-center text-white bg-white bg-opacity-80 mix-blend-difference gap-10 font-semibold w-fit rounded-xl py-4 px-8"
+          className="flex items-center text-sm md:text-base text-white bg-white bg-opacity-80 mix-blend-difference gap-10 font-semibold w-fit rounded-xl py-2 md:py-4 px-4 md:px-8"
         
         >
           <li className="text-white mix-blend-difference">About</li>
