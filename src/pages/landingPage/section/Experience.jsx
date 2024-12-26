@@ -5,6 +5,7 @@ import OpeningExperience from "../../../components/OpeningExperience";
 import ExperienceCard from "../../../components/ExperienceCard";
 import { section } from "framer-motion/client";
 import { experiences } from "../../../data/experience";
+import ClosingExperience from "../../../components/ClosingExperience";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -81,6 +82,7 @@ const Experience = () => {
            
             </div>
           ))}
+          <ClosingExperience/>
         </div>
       </div>
     </div>
