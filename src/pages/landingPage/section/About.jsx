@@ -75,6 +75,7 @@ const About = () => {
         x: 0,
       }
     );
+    
     gsap.fromTo(
       "#about-line",
       { opacity: 0, x: -window.innerWidth / 4 },
@@ -111,7 +112,6 @@ const About = () => {
       }
     );
 
-    // Periksa apakah elemen boxItem ada
     if (boxItems.length > 0) {
       timeline2.fromTo(
         "#box-wrapper",
@@ -190,20 +190,20 @@ const About = () => {
         <div
           id="about-wave"
           className="bg-primary sticky top-0 h-full "
-          style={{ width: "100px", height: "100px",
+          style={{ width: window.innerWidth>1200? "100px":"50px", height: window.innerWidth>1200? "100px":"50px",
             backgroundColor: "#212529",
             backgroundImage: `url("https://www.transparenttextures.com/patterns/stardust.png")`,
            }}
         >
           <main className="container  flex flex-col gap-4 justify-center h-full">
-            <div className=" text-secondary space-y-4 flex max-w-4xl flex-col justify-center">
-              <h2 id="about-title" className="font-bold text-8xl">
+            <div className=" text-secondary space-y-2 md:space-y-4 flex max-w-4xl flex-col justify-center">
+              <h2 id="about-title" className="font-bold md:text-5xl text-2xl lg:text-8xl">
                 About Me.
               </h2>
               <div id="about-line" className="h-1 bg-secondary max-w-3xl"></div>
               <p
                 id="about-description"
-                className="text-base text-justify max-w-4xl relative overflow-hidden z-30 mix-blend-difference"
+                className="md:text-base text-xs text-justify max-w-4xl relative overflow-hidden z-30 mix-blend-difference"
               >
                 I am a student studying Information Technology Education at the
                 Faculty of Computer Science, Brawijaya University. I have an
@@ -217,24 +217,24 @@ const About = () => {
                 roles.
               </p>
               <div id="about-description" className="space-y-2 relative rounded-md  max-w-20 text-center">
-                <h3 className="text-2xl font-bold">20 +</h3>
+                <h3 className="text-base md:text-2xl font-bold">20 +</h3>
                 <small>Completed Project</small>
               </div>
             </div>
             <div id="github-calendar" className="flex gap-4 relative z-10 text-secondary">
               <GitHubCalendar
                 username="anantariskys"
-                blockSize={12}
+                blockSize={window.innerWidth>1200? 12:6}
                 blockMargin={2}
                 colorScheme="dark"
-                fontSize={12}
+                fontSize={window.innerWidth>1200?12:6}
                 
               />
             </div>
           </main>
           <div
             id="box-wrapper"
-            className="absolute z-0 overflow-hidden flex justify-end  size-fit w-full h-full top-0 right-0"
+            className="absolute z-0 overflow-hidden hidden lg:flex justify-end  size-fit w-full h-full top-0 right-0"
             onClick={() => console.log("clicked")}
           >
             {sosialMedia.map((item, index) => (
