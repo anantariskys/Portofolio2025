@@ -30,7 +30,7 @@ const TechStack = () => {
       });
     };
 
-    // Setup Line Animation
+
     const lineTimeline = gsap.timeline({
       scrollTrigger: {
         trigger: "#techstack-section",
@@ -44,7 +44,7 @@ const TechStack = () => {
       lineTimeline.fromTo(line, { width: 0 }, { width: "80%" });
     });
 
-    // Setup Tech Stack Item Animations
+
     const techStackItems = document.querySelectorAll("#tech-stack-wrapper > div");
     if (techStackItems.length) {
       const techStackTimeline = gsap.timeline({
@@ -82,7 +82,6 @@ const TechStack = () => {
           backgroundImage: `url("https://www.transparenttextures.com/patterns/stardust.png")`,
         }}
       >
-        {/* Box Wrappers */}
         <div id="box-wrapper3" className="w-full hidden md:flex h-1/4 flex-col absolute top-0 left-0">
           {[...Array(3)].map((_, i) => (
             <div key={i} className="bg-secondary" />
@@ -95,7 +94,6 @@ const TechStack = () => {
           ))}
         </div>
 
-        {/* Main Content */}
         <main className="container h-full flex items-start md:items-end py-4 md:py-20 justify-start md:gap-4 flex-col">
           <div className="md:text-5xl text-4xl lg:text-7xl font-bold">Tech Stack & Skills</div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8">
