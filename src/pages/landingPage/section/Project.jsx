@@ -1,6 +1,8 @@
 import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { projects } from "../../../data/project";
+import { Link } from "react-router-dom";
 
 const Project = () => {
   const sectionRef = useRef(null);
@@ -13,25 +15,24 @@ const Project = () => {
       if (transitionRef.current?.children) {
         const sections = Array.from(transitionRef.current.children);
 
-        sections.forEach((section, index) => {
+        sections.forEach((section) => {
           const tl = gsap.timeline({
             scrollTrigger: {
               trigger: section,
-              start: `top ${index*2}%`,
-            //   end: `+=${1000}%`,
+              start: `top top`,
+              end: `+=${2000}%`,
               pin: true,
               pinSpacing: false,
               scrub: true,
-              markers: false, // Set to true for debugging
-              anticipatePin: 1
-            }
+              markers: false,
+              anticipatePin: 1,
+            },
           });
-
         });
       }
     }, transitionRef);
 
-    return () => context.revert(); // Cleanup
+    return () => context.revert();
   }, []);
 
   return (
@@ -45,18 +46,58 @@ const Project = () => {
       }}
     >
       <main ref={transitionRef} className="relative">
-        {Array.from({ length: 10 }).map((_, index) => (
+        <div
+          style={{
+            backgroundImage:
+              'url("https://www.transparenttextures.com/patterns/stardust.png")',
+          }}
+          className="min-h-screen w-full text-7xl  bg-white text-primary border-y-2 border-primary  flex items-center justify-center   font-bold"
+        >
+          <h2>My Projects</h2>
+        </div>
+        {projects.map((item, index) => (
           <div
             key={index}
-            className="h-screen w-full  bg-white text-primary border-2 border-primary  flex items-center justify-center  text-2xl font-bold"
+            style={{
+              backgroundImage:
+                'url("https://www.transparenttextures.com/patterns/stardust.png")',
+            }}
+            className="min-h-screen w-full   bg-white text-primary border-y-2 border-primary  "
           >
-            Section {index + 1}
+            <div className="container flex items-center justify-between gap-4 text-2xl  min-h-screen">
+              <img
+                src="https://picsum.photos/id/237/200/300"
+                className="aspect-video object-cover max-w-2xl w-full"
+                alt=""
+              />
+              <div className="w-full space-y-2">
+                <h3 className="text-4xl">{item.name}</h3>
+                <p>{item.description}</p>
+                <div className="flex gap-2 flex-wrap">
+                  {item.tech_stack.map((tech, index) => (
+                    <small
+                      className="bg-primary text-secondary px-2 rounded-lg"
+                      key={index}
+                    >
+                      {tech}
+                    </small>
+                  ))}
+                </div>
+                <div>
+                  {item.link && (
+                    <a href={item.link}>
+                      <button className="bg-primary text-sm text-secondary px-4 py-2 rounded-lg">
+                        View Project
+                      </button>
+                    </a>
+                  )}
+                </div>
+              </div>
+            </div>
           </div>
         ))}
       </main>
-      <div className="h-screen">
-
-      </div>
+      <div className="h-screen"></div>
     </section>
   );
 };
