@@ -1,62 +1,73 @@
-import image from "../assets/project/new_portofolio.jpg";
-import image1 from "../assets/project/kedai_mamsuki.jpg";
-import image2 from "../assets/project/jalankodeku.jpg";
-import image3 from "../assets/project/kbmdsi.jpg";
-import image4 from "../assets/project/n_blog.jpg";
-import image5 from "../assets/project/old_portofolio.jpg";
-
-  export const data = [
+  export const projects = [
     {
-      id: 1,
-      title: "MY NEW PORTFOLIO",
-      imageUrl: image,
-      description: "My newest portfolio website, which you are visiting now, was created with the aim of tidying up and updating your portfolio and learning about new tech stacks.",
-      url: "https://ananta-risky-susanto.vercel.app/",
-      techStack: ["Vite", "React", "Tailwind CSS", "DaisyUI", "Framer Motion", "SplideJS", "Laravel", "Particle.js"],
+      "name": "Gen-Free",
+      "description": "A digital platform that facilitates political discussions and aspirations across various groups.",
+      "tech_stack": ["Remix Js", "Tailwind CSS", "Supabase"],
+      "link": "https://gen-free.vercel.app/",
+      "img_url": ""
     },
     {
-      id: 2,
-      title: "KEDAI MAMSUKI",
-      imageUrl: image1,
-      description:
-        "Web Based Point Of Sale Application using Laravel, Personal projects in terms of supporting my sister's business and in the form of my service. There are several features such as Basic CRUD, Searching, Login and features that support point of sale applications",
-      url: null,
-      techStack: ["Laravel", "Bootstrap"],
+      "name": "KBMDSI 2024",
+      "description": "A responsive and interactive website for the KBMDSI organization.",
+      "tech_stack": ["Laravel", "Inertia Js", "React Js", "Tailwind CSS", "Framer Motion"],
+      "link": "https://kbmdsi.ub.ac.id/",
+      "img_url": ""
     },
     {
-      id: 3,
-      title: "JALAN KODEKU",
-      imageUrl: image2,
-      description:
-        "Jalan Kodeku is a final project assignment for a user interface design course in the form of a programming learning website targeted at all groups, whether they are laypeople or those who have already been involved in programming. This website displays the learning stages for each job role in the IT field, then there is also a blog about news updates in the IT world. Don't forget, there are also questions that users can try. Thank you to my group friends who have worked hard on this final project ❤︎",
-      url: "https://jalankodeku.vercel.app/",
-      techStack: ["Vite", "React", "Tailwind CSS", "SwiperJS", "SASS"],
+      "name": "EM UB 2024",
+      "description": "A responsive, elegant, and interactive website for the EM UB organization.",
+      "tech_stack": ["React Js", "Tailwind CSS", "Framer Motion", "Axios"],
+      "link": "https://em.ub.ac.id/",
+      "img_url": ""
     },
     {
-      id: 4,
-      title: "KBMDSI WEBSITE",
-      imageUrl: image3,
-      description:
-        "The KBMDSI organizational web was developed by the informatics team, in which I participated in the front end aspect. This website introduces KBMDSI itself so that this website becomes KBMDSI's branding to the outside. This website has a blog-like feature. Then there is also a registration feature for intern staff",
-      url: "https://kbmdsi.ub.ac.id/",
-      techStack: ["Vite", "Tailwind CSS", "Laravel"],
+      "name": "Kampung Budaya 2024",
+      "description": "A dedicated website for Kampung Budaya, the annual event by EM UB.",
+      "tech_stack": ["Laravel", "Inertia Js", "React Js", "Tailwind CSS", "Framer Motion"],
+      "link": "https://kampungbudaya.ub.ac.id/",
+      "img_url": ""
     },
     {
-      id: 5,
-      title: "N BLOG",
-      imageUrl: image4,
-      description:
-        "This is my personal project in terms of learning Laravel using the concept of project based learning. Where this project is a blog website, where there are login features, and basic crud such as creating a blog, updating blogs, reading blogs and deleting blogs. Then there are searching and pagination features",
-      url: "https://github.com/anantariskys/N-Blog",
-      techStack: ["Laravel", "Bootstrap"],
+      "name": "Raja Brawijaya 2024",
+      "description": "A website for new students of Universitas Brawijaya to learn about campus life.",
+      "tech_stack": ["Laravel", "Inertia Js", "React Js", "Tailwind CSS", "Framer Motion"],
+      "link": "https://rajabrawijaya.ub.ac.id/",
+      "img_url": ""
     },
     {
-      id: 6,
-      title: "MY OLD PORTFOLIO",
-      imageUrl: image5,
-      description: "This is a personal project for study purposes and as a portfolio to register with organizations, but this is where it all starts >_<",
-      url: "https://anantariskys.github.io/",
-      techStack: ["HTML", "CSS", "JavaScript", "Bootsrap"],
+      "name": "TweetNest",
+      "description": "A platform for facilitating food orders with shopping cart functionality.",
+      "tech_stack": ["Remix Js", "Tailwind CSS", "Prisma", "Firebase"],
+      "link": "https://github.com/anantariskys/twitterClone",
+      "img_url": ""
     },
+    {
+      "name": "Balance Box",
+      "description": "A food ordering platform developed as a final project for IT Project Management.",
+      "tech_stack": ["Remix JS", "Tailwind CSS", "Supabase"],
+      "link": "",
+      "img_url": ""
+    },
+    {
+      "name": "JalanKodeku",
+      "description": "A self-paced computer science learning platform in Indonesian.",
+      "tech_stack": ["React Js", "Tailwind CSS"],
+      "link": "https://jalankodeku.vercel.app/",
+      "img_url": ""
+    },
+    {
+      "name": "BRAW!",
+      "description": "A platform for buying and selling preloved items.",
+      "tech_stack": ["React Js", "Tailwind CSS", "Axios"],
+      "link": "https://braw-mager.vercel.app/",
+      "img_url": ""
+    },
+    {
+      "name": "Islamind CMS",
+      "description": "A CMS platform for the mobile application Islamind.",
+      "tech_stack": ["React Js", "Tailwind CSS", "Axios"],
+      "link": "https://islamind-cms.vercel.app/",
+      "img_url": ""
+    }
   ];
 
