@@ -18,8 +18,8 @@ const RenderTechStack = ({ title, data }) => {
               alt={item.title}
               className="w-full aspect-square object-contain"
               draggable="false"
-              loading="lazy"  // Lazy loading to improve performance
-              width="100"  // Set width and height to prevent layout shifts
+      
+              width="100"  
               height="100"
 
               style={{ objectFit: "contain" }}
