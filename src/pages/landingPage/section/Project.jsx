@@ -2,7 +2,6 @@ import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { projects } from "../../../data/project";
-import { Link } from "react-router-dom";
 
 const Project = () => {
   const sectionRef = useRef(null);
@@ -64,15 +63,15 @@ const Project = () => {
             }}
             className="min-h-screen w-full   bg-white text-primary border-y-2 border-primary  "
           >
-            <div className="container flex items-center justify-between gap-4 text-2xl  min-h-screen">
+            <div className="container flex items-center justify-between gap-4     min-h-screen">
               <img
-                src="https://picsum.photos/id/237/200/300"
+                src={item.img_url}
                 className="aspect-video object-cover max-w-2xl w-full"
                 alt=""
               />
               <div className="w-full space-y-2">
-                <h3 className="text-4xl">{item.name}</h3>
-                <p>{item.description}</p>
+                <h3 className="text-4xl font-bold">{item.name}</h3>
+                <p className="text-base">{item.description}</p>
                 <div className="flex gap-2 flex-wrap">
                   {item.tech_stack.map((tech, index) => (
                     <small
